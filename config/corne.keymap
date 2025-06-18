@@ -15,7 +15,7 @@
 // | EXT  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
 //                    | LWR | GUI |SPC/CTRL| ENT | BSPC | ALT |
-                       bindings = 
+                       bindings = <
   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp ESC
   &mo 2     &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LSHFT
@@ -28,7 +28,7 @@
 // | EXT  |  !  |  @  |  [  |  ]  |  _  |   |  {  |  }  |  *  |  (  |  )  |  |   |
 // | SHFT |  -  |  %  |  #  |  &  |  =  |   |  +  |  ^  |  $  |  \  |  ~  | SHFT |
 //                    |     | GUI |SPC/CTRL| ENT | BSPC | ALT |
-                       bindings = 
+                       bindings = <
   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6    &kp N7    &kp N8    &kp N9    &kp N0     &kp ESC
   &mo 2      &kp EXCL     &kp AT       &kp LBKT     &kp RBKT     &kp UNDER      &kp LBRC  &kp RBRC  &kp ASTRK &kp LPAR  &kp RPAR   &kp PIPE
   &kp LSHFT  &kp MINUS    &kp PRCNT    &kp HASH     &kp AMPS     &kp EQUAL      &kp PLUS  &kp CARET &kp DLLR  &kp BSLH  &kp TILDE  &kp LSHFT
@@ -41,7 +41,7 @@
 // |      |     |     |     |     |     |   |     | LFT | DOWN | RGT |     |      |
 // | SHFT |     |     |     |     |     |   |     |     |      |     |     | SHFT |
 //                    |     | GUI |SPC/CTRL| ENT  |BSPC | ALT  |
-                       bindings = 
+                       bindings = <
   &kp TAB   &trans &trans &trans &trans &trans   &trans &trans    &kp UP    &trans     &trans &kp ESC
   &trans    &trans &trans &trans &trans &trans   &trans &kp LEFT  &kp DOWN  &kp RIGHT  &trans &trans
   &kp LSHFT &trans &trans &trans &trans &trans   &trans &trans    &trans    &trans     &trans &kp LSHFT
