@@ -25,21 +25,21 @@
                lower_layer {
 // -----------------------------------------------------------------------------------------
 // |ALT+TAB|  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC  |
-// | EXT  |  !  |  @  |  [  |  ]  |  _  |   |  {  |  }  |  *  |  (  |  )  |  |   |
-// | SHFT |  -  |  %  |  #  |  &  |  =  |   |  +  |  ^  |  $  |  \  |  ~  | SHFT |
+// | EXT   |  !  |  @  |  +  |  =  |  {  |   |  }  |  _  |  &  |  (  |  )  |  $    |
+// | SHFT  |  %  |  -  |  *  |  #  |  [  |   |  ]  |  ^  |  |  |  \  |  ~  |  SHFT |
 //                    |     | GUI |SPC/CTRL | ENT | ESC/GUI | ALT |
                        bindings = <
-  &kp LA(TAB) &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6    &kp N7    &kp N8    &kp N9    &kp N0     &kp BSPC
-  &mo 2       &kp EXCL     &kp AT       &kp LBKT     &kp RBKT     &kp UNDER      &kp LBRC  &kp RBRC  &kp ASTRK &kp LPAR  &kp RPAR   &kp PIPE
-  &kp LSHFT   &kp MINUS    &kp PRCNT    &kp HASH     &kp AMPS     &kp EQUAL      &kp PLUS  &kp CARET &kp DLLR  &kp BSLH  &kp TILDE  &kp LSHFT
-                                   &trans     &kp LGUI       &mt LCTRL SPACE      &kp RET  &mt LGUI ESC  &kp LALT
+  &kp LA(TAB) &kp N1    &kp N2     &kp N3    &kp N4    &kp N5      &kp N6   &kp N7     &kp N8    &kp N9    &kp N0     &kp BSPC
+  &mo 2       &kp EXCL  &kp AT     &kp PLUS  &kp EQUAL &kp LBRC    &kp RBRC &kp UNDER  &kp AMPS  &kp LPAR  &kp RPAR   &kp DLLR
+  &kp LSHFT   &kp PRCNT &kp MINUS  &kp ASTRK &kp HASH  &kp LBKT    &kp RBKT &kp CARET  &kp PIPE  &kp BSLH  &kp TILDE  &kp LSHFT
+                                   &trans    &kp LGUI  &mt LCTRL SPACE    &kp RET  &mt LGUI ESC  &kp LALT
                        >;
                };
                extend_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |     |     |     |     |     |   |     |     |  UP  |     |     | BSPC  |
 // |      |     |     |     |     |     |   |     | LFT | DOWN | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |      |     |     | SHFT |
+// | SHFT |     |     |     |     |     |   |     |     |      |     |     |  SHFT |
 //                    |     | GUI |SPC/CTRL | ENT | ESC/GUI | ALT  |
                        bindings = <
   &kp TAB   &trans &trans &trans &trans &trans   &trans &trans    &kp UP    &trans     &trans &kp BSPC
