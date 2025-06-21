@@ -6,60 +6,69 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+
 / {
-       keymap {
-               compatible = "zmk,keymap";
-               default_layer {
+    keymap {
+        compatible = "zmk,keymap";
+        default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | NAV  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
-//                    | LWR | GUI |SPC/CTRL | ENT | GUI | ALT |
-                       bindings = <
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U      |  I  |  O  |  P  | BSPC |
+// | NAV  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J      |  K  |  L  |  ;  |  '   |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M      |  ,  |  .  |  /  | SHFT |
+//                    | LWR | GUI |SPC/CTRL | ENT | GUI/HOT | ALT |
+            bindings = <
   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
   &mo 2     &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LSHFT
-                 &mo 1 &kp LGUI &mt LCTRL SPACE   &kp RET &mt 3 LGUI &kp LALT
-                       >;
-               };
-               number_and_special_chars {
+                 &mo 1 &kp LGUI &mt LCTRL SPACE   &kp RET &lt 3 LGUI &kp LALT
+            >;
+        };
+        number_and_special_chars {
 // -----------------------------------------------------------------------------------------
 // | ESC   |  !  |  @  |  (  |  )  |  &  |   |  +  |  1  |  2  |  3  |  *  | BSPC  |
 // | NAV   |  #  |  $  |  {  |  }  |  |  |   |  -  |  4  |  5  |  6  |  /  |  =    |
 // | SHFT  |  %  |  ^  |  [  |  ]  |  \  |   |  _  |  7  |  8  |  9  |  0  | SHFT  |
-//                     |     | GUI |SPC/CTRL | ENT | GUI | ALT |
-                       bindings = <
+//                     |     | GUI |SPC/CTRL | ENT | ESC | ALT |
+            bindings = <
   &kp ESC     &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp AMPS      &kp PLUS   &kp N1   &kp N2    &kp N3    &kp ASTRK  &kp BSPC
   &mo 2       &kp HASH  &kp DLLR   &kp LBRC  &kp RBRC  &kp PIPE      &kp MINUS  &kp N4   &kp N5    &kp N6    &kp FSLH   &kp EQUAL
-  &kp LSHFT   &kp PRCNT &kp CARET  &kp LBKT  &kp RBKT  &kp BSLH      &kp UNDER  &kp N7   &kp N8    &kp N9    &kp N0  &kp LSHFT
-                                   &trans    &kp LGUI  &mt LCTRL SPACE    &kp RET  &kp LGUI  &kp LALT
-                       >;
-               };
-               navigation {
+  &kp LSHFT   &kp PRCNT &kp CARET  &kp LBKT  &kp RBKT  &kp BSLH      &kp UNDER  &kp N7   &kp N8    &kp N9    &kp N0     &kp LSHFT
+                                   &trans    &kp LGUI  &mt LCTRL SPACE    &kp RET  &kp ESC  &kp LALT
+            >;
+        };
+        navigation {
 // -----------------------------------------------------------------------------------------
 // |  TAB |     |     |     |     |     |   |     |     |  UP  |     |     | BSPC  |
 // |      |     |     |     |     |     |   |     | LFT | DOWN | RGT |     |       |
 // | SHFT |     |     |     |     |     |   |     |     |      |     |     | SHFT  |
-//                    |     | GUI |SPC/CTRL | ENT | ESC/GUI    | ALT |
-                       bindings = <
+//                    |     | GUI |SPC/CTRL | ENT | GUI | ALT  |
+            bindings = <
   &kp TAB   &trans &trans &trans &trans &trans   &trans &trans    &kp UP    &trans     &trans &kp BSPC
   &trans    &trans &trans &trans &trans &trans   &trans &kp LEFT  &kp DOWN  &kp RIGHT  &trans &trans
   &kp LSHFT &trans &trans &trans &trans &trans   &trans &trans    &trans    &trans     &trans &kp LSHFT
-                         &trans &kp LGUI &mt LCTRL SPACE   &kp RET &mt LGUI ESC &kp LALT
-                       >;
-               };
-               hotkeys {
+                         &trans &kp LGUI &mt LCTRL SPACE   &kp RET &kp LGUI  &kp LALT
+            >;
+        };
+        hotkeys {
 // -----------------------------------------------------------------------------------------
-// | ESC   |  !  |  @  |  (  |  )  |  &  |   |  +  |  1  |  2  |  3  |  *  | BSPC  |
-// | NAV   |  #  |  $  |  {  |  }  |  |  |   |  -  |  4  |  5  |  6  |  /  |  =    |
-// | SHFT  |  %  |  ^  |  [  |  ]  |  \  |   |  _  |  7  |  8  |  9  |  0  | SHFT  |
+// | ESC   |  !  |  @  |  (  |  )  |  &  |   |  +    | CMD+1 | CMD+2 | CMD+3 |  *  | BSPC  |
+// | NAV   |  #  |  $  |  {  |  }  |  |  |   |  -    | CMD+4 | CMD+5 | CMD+6 |  /  |  =    |
+// | SHFT  |  %  |  ^  |  [  |  ]  |  \  |   |  _    | CMD+7 | CMD+8 | CMD+9 | CMD+0 | SHFT  |
 //                     |     | GUI |SPC/CTRL | ENT | GUI | ALT |
-                       bindings = <
-  &kp ESC     &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp AMPS      &kp PLUS     &N1     &kp N2    &kp N3    &kp ASTRK  &kp BSPC
-  &mo 2       &kp HASH  &kp DLLR   &kp LBRC  &kp RBRC  &kp PIPE      &kp MINUS &kp N4     &kp N5    &kp N6    &kp FSLH   &kp EQUAL
-  &kp LSHFT   &kp PRCNT &kp CARET  &kp LBKT  &kp RBKT  &kp BSLH      &kp UNDER &kp N7     &kp N8    &kp N9    &kp N0  &kp LSHFT
+            bindings = <
+  &kp ESC     &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp AMPS      &kp PLUS   &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp ASTRK    &kp BSPC
+  &mo 2       &kp HASH  &kp DLLR   &kp LBRC  &kp RBRC  &kp PIPE      &kp MINUS  &kp LG(N4)  &kp LG(N5)  &kp LG(N6)  &kp FSLH     &kp EQUAL
+  &kp LSHFT   &kp PRCNT &kp CARET  &kp LBKT  &kp RBKT  &kp BSLH      &kp UNDER  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)   &kp LSHFT
                                    &trans    &kp LGUI  &mt LCTRL SPACE    &kp RET  &kp LGUI  &kp LALT
-                       >;
-               };
-       };
+            >;
+        };
+    };
+};
+
+&mt {
+    tapping-term-ms = <100>;
+};
+
+&lt {
+    tapping-term-ms = <100>;
 };
