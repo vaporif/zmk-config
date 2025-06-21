@@ -12,30 +12,30 @@
                default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | EXT  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | NAV  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
-//                    | LWR | GUI |SPC/CTRL | ENT | ESC/GUI | ALT |
+//                    | LWR | GUI |SPC/CTRL | ENT | GUI | ALT |
                        bindings = <
   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
   &mo 2     &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LSHFT
-                 &mo 1 &kp LGUI &mt LCTRL SPACE   &kp RET &kp LGUI &kp LALT
+                 &mo 1 &kp LGUI &mt LCTRL SPACE   &kp RET &mt 3 LGUI &kp LALT
                        >;
                };
-               lower_layer {
+               number_and_special_chars {
 // -----------------------------------------------------------------------------------------
 // | ESC   |  !  |  @  |  (  |  )  |  &  |   |  +  |  1  |  2  |  3  |  *  | BSPC  |
-// | EXT   |  #  |  $  |  {  |  }  |  |  |   |  -  |  4  |  5  |  6  |  /  |  =    |
+// | NAV   |  #  |  $  |  {  |  }  |  |  |   |  -  |  4  |  5  |  6  |  /  |  =    |
 // | SHFT  |  %  |  ^  |  [  |  ]  |  \  |   |  _  |  7  |  8  |  9  |  0  | SHFT  |
 //                     |     | GUI |SPC/CTRL | ENT | GUI | ALT |
                        bindings = <
-  &kp ESC     &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp AMPS      &kp PLUS  &N1     &kp N2    &kp N3    &kp ASTRK  &kp BSPC
-  &mo 2       &kp HASH  &kp DLLR   &kp LBRC  &kp RBRC  &kp PIPE      &kp MINUS &kp N4     &kp N5    &kp N6    &kp FSLH   &kp EQUAL
-  &kp LSHFT   &kp PRCNT &kp CARET  &kp LBKT  &kp RBKT  &kp BSLH      &kp UNDER &kp N7     &kp N8    &kp N9    &kp N0  &kp LSHFT
+  &kp ESC     &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp AMPS      &kp PLUS   &kp N1   &kp N2    &kp N3    &kp ASTRK  &kp BSPC
+  &mo 2       &kp HASH  &kp DLLR   &kp LBRC  &kp RBRC  &kp PIPE      &kp MINUS  &kp N4   &kp N5    &kp N6    &kp FSLH   &kp EQUAL
+  &kp LSHFT   &kp PRCNT &kp CARET  &kp LBKT  &kp RBKT  &kp BSLH      &kp UNDER  &kp N7   &kp N8    &kp N9    &kp N0  &kp LSHFT
                                    &trans    &kp LGUI  &mt LCTRL SPACE    &kp RET  &kp LGUI  &kp LALT
                        >;
                };
-               extend_layer {
+               navigation {
 // -----------------------------------------------------------------------------------------
 // |  TAB |     |     |     |     |     |   |     |     |  UP  |     |     | BSPC  |
 // |      |     |     |     |     |     |   |     | LFT | DOWN | RGT |     |       |
@@ -46,6 +46,19 @@
   &trans    &trans &trans &trans &trans &trans   &trans &kp LEFT  &kp DOWN  &kp RIGHT  &trans &trans
   &kp LSHFT &trans &trans &trans &trans &trans   &trans &trans    &trans    &trans     &trans &kp LSHFT
                          &trans &kp LGUI &mt LCTRL SPACE   &kp RET &mt LGUI ESC &kp LALT
+                       >;
+               };
+               hotkeys {
+// -----------------------------------------------------------------------------------------
+// | ESC   |  !  |  @  |  (  |  )  |  &  |   |  +  |  1  |  2  |  3  |  *  | BSPC  |
+// | NAV   |  #  |  $  |  {  |  }  |  |  |   |  -  |  4  |  5  |  6  |  /  |  =    |
+// | SHFT  |  %  |  ^  |  [  |  ]  |  \  |   |  _  |  7  |  8  |  9  |  0  | SHFT  |
+//                     |     | GUI |SPC/CTRL | ENT | GUI | ALT |
+                       bindings = <
+  &kp ESC     &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp AMPS      &kp PLUS     &N1     &kp N2    &kp N3    &kp ASTRK  &kp BSPC
+  &mo 2       &kp HASH  &kp DLLR   &kp LBRC  &kp RBRC  &kp PIPE      &kp MINUS &kp N4     &kp N5    &kp N6    &kp FSLH   &kp EQUAL
+  &kp LSHFT   &kp PRCNT &kp CARET  &kp LBKT  &kp RBKT  &kp BSLH      &kp UNDER &kp N7     &kp N8    &kp N9    &kp N0  &kp LSHFT
+                                   &trans    &kp LGUI  &mt LCTRL SPACE    &kp RET  &kp LGUI  &kp LALT
                        >;
                };
        };
