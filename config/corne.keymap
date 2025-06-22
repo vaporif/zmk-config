@@ -8,13 +8,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        combo_layer {
-            if-layers = <1 2>;  // If both mod layers are active
-            then-layer = <6>;   // Activate special layer 6
-        };
-    };
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -34,7 +27,7 @@
 // -----------------------------------------------------------------------------------------
 // | ESC  |  !  |  @  |  (  |  )  |  &  |   |  +  |  1  |  2  |  3  |  *  | BSPC  |
 // |      |  #  |  $  |  {  |  }  |  |  |   |  -  |  4  |  5  |  6  |  /  |  =    |
-// | SHIFT |  %  |  ^  |  [  |  ]  |  \  |   |  _  |  7  |  8  |  9  |  0  | SHFT  |
+// | SHFT |  %  |  ^  |  [  |  ]  |  \  |   |  _  |  7  |  8  |  9  |  0  | SHFT  |
 //                                | SPC |         | BSPC| ESC | DEL |
             bindings = <
   &kp ESC   &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp AMPS      &kp PLUS   &kp N1   &kp N2    &kp N3    &kp ASTRK  &kp BSPC
@@ -47,8 +40,8 @@
 // -----------------------------------------------------------------------------------------
 // | `    |  !  |  @  |  (  |  )  |  &  |   |  +  | CMD+1 | CMD+2 | CMD+3 |  *  | BSPC  |
 // |      |  #  |  $  |  {  |  }  |  |  |   |  -  | CMD+4 | CMD+5 | CMD+6 |  /  |  =    |
-// | CTRL |  %  |  ^  |  [  |  ]  |  \  |   |  _  | CMD+7 | CMD+8 | CMD+9 |CMD+0| SHFT  |
-//                           | GUI| SPC |   | ENT  | GUI   | ALT |
+// | SHFT |  %  |  ^  |  [  |  ]  |  \  |   |  _  | CMD+7 | CMD+8 | CMD+9 |CMD+0| SHFT  |
+//                           | GUI| SPC |   | ENT | GUI   | ALT |
             bindings = <
   &kp GRAVE   &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp AMPS      &kp PLUS   &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp ASTRK    &kp BSPC
   &trans      &kp HASH  &kp DLLR   &kp LBRC  &kp RBRC  &kp PIPE      &kp MINUS  &kp LG(N4)  &kp LG(N5)  &kp LG(N6)  &kp FSLH     &kp EQUAL
@@ -69,19 +62,4 @@
                          &trans &kp LGUI &kp LG(SPACE)   &kp RET &kp ESC  &kp LALT
             >;
         };
-
-        ctrl {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U      |  I  |  O  |  P  | BSPC |
-// | NAV  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J      |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M      |  ,  |  .  |  /  | SHFT |
-//                    | GUI | LWR |SPAC |   | ENT | UPPER   | ALT |
-            bindings = <
-  &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-  &mo 3     &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-  &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LSHFT
-               &kp LGUI  &mo 1  &kp SPACE   &kp RET &mo 2 &kp LALT
-            >;
-        };
-    };
 };
