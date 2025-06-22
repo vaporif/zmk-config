@@ -18,7 +18,7 @@
         cmd_or_o: cmd_or_o {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp FLSH>, <&kp O>;
+            bindings = <&kp FSLH>, <&kp O>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
     };
