@@ -25,9 +25,9 @@
         };
         lower {
 // -----------------------------------------------------------------------------------------
-// | ESC   |  !  |  @  |  (  |  )  |  &  |   |  +  |  1  |  2  |  3  |  *  | BSPC  |
-// |       |  #  |  $  |  {  |  }  |  |  |   |  -  |  4  |  5  |  6  |  /  |  =    |
-// | CTRL  |  %  |  ^  |  [  |  ]  |  \  |   |  _  |  7  |  8  |  9  |  0  | SHFT  |
+// | ESC  |  !  |  @  |  (  |  )  |  &  |   |  +  |  1  |  2  |  3  |  *  | BSPC  |
+// |      |  #  |  $  |  {  |  }  |  |  |   |  -  |  4  |  5  |  6  |  /  |  =    |
+// | CTRL |  %  |  ^  |  [  |  ]  |  \  |   |  _  |  7  |  8  |  9  |  0  | SHFT  |
 //                     |                           | BSPC| ESC | DEL |
             bindings = <
   &kp ESC   &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp AMPS      &kp PLUS   &kp N1   &kp N2    &kp N3    &kp ASTRK  &kp BSPC
@@ -38,10 +38,10 @@
         };
         upper {
 // -----------------------------------------------------------------------------------------
-// | `   |  !  |  @  |  (  |  )  |  &  |   |  +    | CMD+1 | CMD+2 | CMD+3 |  *  | BSPC  |
-// |     |  #  |  $  |  {  |  }  |  |  |   |  -    | CMD+4 | CMD+5 | CMD+6 |  /  |  =    |
-// | CTRL|  %  |  ^  |  [  |  ]  |  \  |   |  _    | CMD+7 | CMD+8 | CMD+9 |CMD+0| SHFT  |
-//                           | GUI |SPC|   | ENT   | GUI   | ALT |
+// | `    |  !  |  @  |  (  |  )  |  &  |   |  +  | CMD+1 | CMD+2 | CMD+3 |  *  | BSPC  |
+// |      |  #  |  $  |  {  |  }  |  |  |   |  -  | CMD+4 | CMD+5 | CMD+6 |  /  |  =    |
+// | CTRL |  %  |  ^  |  [  |  ]  |  \  |   |  _  | CMD+7 | CMD+8 | CMD+9 |CMD+0| SHFT  |
+//                           | GUI| SPC |   | ENT  | GUI   | ALT |
             bindings = <
   &kp GRAVE   &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp AMPS      &kp PLUS   &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp ASTRK    &kp BSPC
   &trans      &kp HASH  &kp DLLR   &kp LBRC  &kp RBRC  &kp PIPE      &kp MINUS  &kp LG(N4)  &kp LG(N5)  &kp LG(N6)  &kp FSLH     &kp EQUAL
@@ -54,7 +54,7 @@
 // |  TAB |     |     |     |     |     |   |     |     |  UP  |     |     | BSPC  |
 // |      |     |     |     |     |     |   |     | LFT | DOWN | RGT |     |       |
 // |      |     |     |     |     |     |   |     |     |      |     |     | SHFT  |
-//                          |GUI |CMD+SPC|  | ENT | ESC  | ALT |
+//                          |GUI |CMD+SPC|  | ENT | ESC | ALT  |
             bindings = <
   &kp TAB   &trans &trans &trans &trans &trans   &trans &trans    &kp UP    &trans     &trans &kp BSPC
   &trans    &trans &trans &trans &trans &trans   &trans &kp LEFT  &kp DOWN  &kp RIGHT  &trans &trans
