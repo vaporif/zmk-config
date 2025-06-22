@@ -8,11 +8,13 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        ctrl_access {
-            if-layers = <1 2>;  // If both nav (3) AND shift layer (4) active
-            then-layer = <4>;   // Activate control layer (5)
+    behaviors {
+        shift_track: shift_track {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&kp>;
         };
     };
     keymap {
@@ -69,18 +71,21 @@
                          &trans &kp LGUI &kp LG(SPACE)   &kp RET &kp ESC  &kp LALT
             >;
         };
-        ultra {
-// -----------------------------------------------------------------------------------------
-// |  TAB |     |     |     |     |     |   |     |     |  UP  |     |     | BSPC  |
-// |      |     |     |     |     |     |   |     | LFT | DOWN | RGT |     |       |
-// | LCTRL|     |     |     |     |     |   |     |     |      |     |     | SHFT  |
-//                          |GUI |CMD+SPC|  | ENT | ESC | ALT  |
+    };
+    ctrl_layer { // 4 - Activated when BOTH nav AND shift are active
+        bindings = <
+&kp TAB      &kp LC(Q) &kp LC(W) &kp LC(E) &kp LC(R) &kp LC(T)   &kp LC(Y) &kp LC(U)  &kp LC(I)  &kp LC(O)   &kp LC(P)    &kp BSPC
+&kp LCTRL    &kp LC(A) &kp LC(S) &kp LC(D) &kp LC(F) &kp LC(G)   &kp LC(H) &kp LC(J)  &kp LC(K)  &kp LC(L)   &trans       &trans
+&kp LCTRL    &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(B)   &kp LC(N) &kp LC(M)  &trans     &trans      &trans       &kp LCTRL
+                               &trans &kp LGUI &kp SPACE   &kp RET &kp ESC  &kp LALT
+        >;
+    };
+    shift_tracker { // 5 - invisible layer that tracks shift state
             bindings = <
-  &kp TAB   &trans &trans &trans &trans &trans   &trans &trans    &kp UP    &trans     &trans &kp BSPC
-  &trans    &trans &trans &trans &trans &trans   &trans &kp LEFT  &kp DOWN  &kp RIGHT  &trans &trans
-  &kp LCTRL &trans &trans &trans &trans &trans   &trans &trans    &trans    &trans     &trans &kp LSHFT
-                         &trans &kp LGUI &kp LG(SPACE)   &kp RET &kp ESC  &kp LALT
+  &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+  &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+  &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+                       &trans &trans &trans   &trans &trans &trans
             >;
         };
-    };
 };
