@@ -53,12 +53,12 @@
 // -----------------------------------------------------------------------------------------
 // |  TAB |     |     |     |     |     |   |     |     |  UP  |     |     | BSPC  |
 // |      |     |     |     |     |     |   |     | LFT | DOWN | RGT |     |       |
-// |      |     |     |     |     |     |   |     |     |      |     |     | SHFT  |
+// | LCTRL|     |     |     |     |     |   |     |     |      |     |     | SHFT  |
 //                          |GUI |CMD+SPC|  | ENT | ESC | ALT  |
             bindings = <
   &kp TAB   &trans &trans &trans &trans &trans   &trans &trans    &kp UP    &trans     &trans &kp BSPC
   &trans    &trans &trans &trans &trans &trans   &trans &kp LEFT  &kp DOWN  &kp RIGHT  &trans &trans
-  &trans    &trans &trans &trans &trans &trans   &trans &trans    &trans    &trans     &trans &kp LSHFT
+  &kp LCTRL &trans &trans &trans &trans &trans   &trans &trans    &trans    &trans     &trans &kp LSHFT
                          &trans &kp LGUI &kp LG(SPACE)   &kp RET &kp ESC  &kp LALT
             >;
         };
