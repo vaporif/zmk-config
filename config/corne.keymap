@@ -8,6 +8,13 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        ctrl_access {
+            if-layers = <1 2>;  // If both nav (3) AND shift layer (4) active
+            then-layer = <4>;   // Activate control layer (5)
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -50,6 +57,19 @@
             >;
         };
         navigation {
+// -----------------------------------------------------------------------------------------
+// |  TAB |     |     |     |     |     |   |     |     |  UP  |     |     | BSPC  |
+// |      |     |     |     |     |     |   |     | LFT | DOWN | RGT |     |       |
+// | LCTRL|     |     |     |     |     |   |     |     |      |     |     | SHFT  |
+//                          |GUI |CMD+SPC|  | ENT | ESC | ALT  |
+            bindings = <
+  &kp TAB   &trans &trans &trans &trans &trans   &trans &trans    &kp UP    &trans     &trans &kp BSPC
+  &trans    &trans &trans &trans &trans &trans   &trans &kp LEFT  &kp DOWN  &kp RIGHT  &trans &trans
+  &kp LSHFT &trans &trans &trans &trans &trans   &trans &trans    &trans    &trans     &trans &kp LSHFT
+                         &trans &kp LGUI &kp LG(SPACE)   &kp RET &kp ESC  &kp LALT
+            >;
+        };
+        ultra {
 // -----------------------------------------------------------------------------------------
 // |  TAB |     |     |     |     |     |   |     |     |  UP  |     |     | BSPC  |
 // |      |     |     |     |     |     |   |     | LFT | DOWN | RGT |     |       |
