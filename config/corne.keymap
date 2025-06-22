@@ -8,6 +8,20 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    behaviors {
+        cmd_or_i: cmd_or_i {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LG(N6)>, <&kp I>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        cmd_or_o: cmd_or_o {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp FLSH>, <&kp O>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
         default_layer {
