@@ -36,19 +36,6 @@
                            &trans &trans  &kp SPACE  &kp BSPC  &kp ESC  &kp DEL
             >;
         };
-        navigation {
-// -----------------------------------------------------------------------------------------
-// |  TAB |     |     |     |     |     |   |     |     |  UP  |     |     | BSPC  |
-// |      |     |     |     |     |     |   |     | LFT | DOWN | RGT |     |       |
-// |      |     |     |     |     |     |   |     |     |      |     |     | SHFT  |
-//                          |GUI |CMD+SPC|  | ENT | ESC  | ALT |
-            bindings = <
-  &kp TAB   &trans &trans &trans &trans &trans   &trans &trans    &kp UP    &trans     &trans &kp BSPC
-  &trans    &trans &trans &trans &trans &trans   &trans &kp LEFT  &kp DOWN  &kp RIGHT  &trans &trans
-  &trans    &trans &trans &trans &trans &trans   &trans &trans    &trans    &trans     &trans &kp LSHFT
-                         &trans &kp LGUI &kp LG(SPACE)   &kp RET &kp ESC  &kp LALT
-            >;
-        };
         upper {
 // -----------------------------------------------------------------------------------------
 // | `   |  !  |  @  |  (  |  )  |  &  |   |  +    | CMD+1 | CMD+2 | CMD+3 |  *  | BSPC  |
@@ -62,13 +49,18 @@
                                    &trans    &kp LGUI  &kp SPACE     &trans  &trans  &trans
             >;
         };
+        navigation {
+// -----------------------------------------------------------------------------------------
+// |  TAB |     |     |     |     |     |   |     |     |  UP  |     |     | BSPC  |
+// |      |     |     |     |     |     |   |     | LFT | DOWN | RGT |     |       |
+// |      |     |     |     |     |     |   |     |     |      |     |     | SHFT  |
+//                          |GUI |CMD+SPC|  | ENT | ESC  | ALT |
+            bindings = <
+  &kp TAB   &trans &trans &trans &trans &trans   &trans &trans    &kp UP    &trans     &trans &kp BSPC
+  &trans    &trans &trans &trans &trans &trans   &trans &kp LEFT  &kp DOWN  &kp RIGHT  &trans &trans
+  &trans    &trans &trans &trans &trans &trans   &trans &trans    &trans    &trans     &trans &kp LSHFT
+                         &trans &kp LGUI &kp LG(SPACE)   &kp RET &kp ESC  &kp LALT
+            >;
+        };
     };
 };
-
-/* &mt  */
-/*     tapping-term-ms = <100>; */
-/* }; */
-/**/
-/* &lt { */
-/*     tapping-term-ms = <100>; */
-/* }; */
