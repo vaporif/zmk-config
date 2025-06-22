@@ -67,7 +67,7 @@
             bindings = <
   &kp TAB   &trans &trans &trans &trans &trans   &trans &trans    &kp UP    &trans     &trans &kp BSPC
   &trans    &trans &trans &trans &trans &trans   &trans &kp LEFT  &kp DOWN  &kp RIGHT  &trans &trans
-  &smart_shft LCTRL LCTR &trans &trans &trans &trans &trans   &trans &trans    &trans    &trans     &trans &kp LSHFT
+  &smart_shft LCTRL LCTRL &trans &trans &trans &trans &trans   &trans &trans    &trans    &trans     &trans &kp LSHFT
                          &trans &kp LGUI &kp LG(SPACE)   &kp RET &kp ESC  &kp LALT
             >;
         };
