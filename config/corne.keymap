@@ -14,12 +14,12 @@
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U      |  I  |  O  |  P  | BSPC |
 // | NAV  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J      |  K  |  L  |  ;  |  '   |
-// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M      |  ,  |  .  |  /  | SHFT |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M      |  ,  |  .  |  /  | SHFT |
 //                    | LWR | GUI |SPAC |   | ENT | UPPER   | ALT |
             bindings = <
   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
   &mo 2     &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-  &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LSHFT
+  &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LSHFT
                &kp LGUI  &mo 1  &kp SPACE   &kp RET &mo 3 &kp LALT
             >;
         };
@@ -65,10 +65,10 @@
     };
 };
 
-&mt {
-    tapping-term-ms = <100>;
-};
-
-&lt {
-    tapping-term-ms = <100>;
-};
+/* &mt  */
+/*     tapping-term-ms = <100>; */
+/* }; */
+/**/
+/* &lt { */
+/*     tapping-term-ms = <100>; */
+/* }; */
