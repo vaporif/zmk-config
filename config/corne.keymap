@@ -62,4 +62,5 @@
                          &trans &kp LGUI &kp LG(SPACE)   &kp RET &kp ESC  &kp LALT
             >;
         };
+    };
 };
