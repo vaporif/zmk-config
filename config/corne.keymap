@@ -52,12 +52,12 @@
         navigation {
 // -----------------------------------------------------------------------------------------
 // |  TAB |     |     |     |     |     |   |     |     |  UP  |     |     | BSPC  |
-// |      |     |     |     |     |     |   |     | LFT | DOWN | RGT |     |       |
+// |      |     |     |PREV |PLAY |NEXT |   |     | LFT | DOWN | RGT |     |       |
 // | SHIFT|     |     |     |     |     |   |     |     |      |     |     | SHFT  |
 //                          |LGUI |CMD+SPC|  | ENT | ESC | ALT  |
             bindings = <
   &kp TAB   &trans &trans &trans &trans &trans   &trans &trans    &kp UP    &trans     &trans &kp BSPC
-  &trans    &trans &trans &trans &trans &trans   &trans &kp LEFT  &kp DOWN  &kp RIGHT  &trans &trans
+  &trans    &trans &C_PREV &C_PLAY_PAUSE &C_NEXT &trans   &trans &kp LEFT  &kp DOWN  &kp RIGHT  &trans &trans
   &kp LSHFT &trans &trans &trans &trans &trans   &trans &trans    &trans    &trans     &trans &kp LSHFT
                          &trans &kp LGUI &kp LG(SPACE)   &kp RET &kp ESC  &kp LALT
             >;
