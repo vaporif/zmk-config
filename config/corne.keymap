@@ -8,6 +8,15 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    behaviors {
+        td_lower_ctrl: tap_dance_lower_ctrl {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo 1>, <&kp LCTRL>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -20,46 +29,46 @@
   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
   &mo 3     &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp LSHFT
-               &kp LGUI  &mo 1  &kp SPACE   &kp RET &mo 2 &kp LALT
+               &kp LGUI  &td_lower_ctrl  &kp SPACE   &kp RET &mo 2 &kp LALT
             >;
         };
         lower {
 // -----------------------------------------------------------------------------------------
 // | ESC  |  !  |  @  |  (  |  )  |  &  |   |  +  |  1  |  2  |  3  |  *  | BSPC  |
 // |      |  #  |  $  |  {  |  }  |  |  |   |  -  |  4  |  5  |  6  |  /  |  =    |
-// | SHFT |  %  |  ^  |  [  |  ]  |  \  |   |  _  |  7  |  8  |  9  |  0  | SHFT  |
+// | SHFT |  %  |  ^  |     |     |  [  |   |  ]  |  7  |  8  |  9  |  0  | SHFT  |
 //                                | SPC |         | BSPC| ESC | DEL |
             bindings = <
-  &kp ESC   &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp AMPS      &kp PLUS   &kp N1   &kp N2    &kp N3    &kp ASTRK  &kp BSPC
+  &kp ESC   &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp BSLH      &kp PLUS   &kp N1   &kp N2    &kp N3    &kp ASTRK  &kp BSPC
   &trans    &kp HASH  &kp DLLR   &kp LBRC  &kp RBRC  &kp PIPE      &kp MINUS  &kp N4   &kp N5    &kp N6    &kp FSLH   &kp EQUAL
-  &kp LSHFT    &kp PRCNT &kp CARET  &kp LBKT  &kp RBKT  &kp BSLH      &kp UNDER  &kp N7   &kp N8    &kp N9    &kp N0     &kp LSHFT
+  &kp LSHFT    &kp PRCNT &kp CARET  &trans  trans  &kp LBKT   &kp RBKT  &kp N7   &kp N8    &kp N9    &kp N0     &kp LSHFT
                            &trans &trans  &kp SPACE  &kp BSPC  &kp ESC  &kp DEL
             >;
         };
         upper {
 // -----------------------------------------------------------------------------------------
-// | `    |  !  |  @  |  (  |  )  |  &  |   |  +  | CMD+1 | CMD+2 | CMD+3 |  *  | BSPC  |
-// |      |  #  |  $  |  {  |  }  |  |  |   |  -  | CMD+4 | CMD+5 | CMD+6 |  /  |  =    |
-// | SHFT |  %  |  ^  |  [  |  ]  |  \  |   |  _  | CMD+7 | CMD+8 | CMD+9 |CMD+0| SHFT  |
-//                          | CTRL| SPC |   | ENT | GUI   | ALT |
+// |      |  !  |  @  |  (  |  )  |  \  |   |  +  | CMD+1 | CMD+2 | CMD+3 |  *  | BSPC  |
+// |      |  #  |  $  |  {  |  }  |  |  |   |  -  | CMD+4 | CMD+5 | CMD+6 |     |  =    |
+// | SHFT |  %  |  ^  |  `  |     |  [  |   |     | CMD+7 | CMD+8 | CMD+9 |     | SHFT  |
+//                    |  &  |  _  | SPC |
             bindings = <
-  &kp GRAVE   &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp AMPS      &kp PLUS   &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp ASTRK    &kp BSPC
-  &trans      &kp HASH  &kp DLLR   &kp LBRC  &kp RBRC  &kp PIPE      &kp MINUS  &kp LG(N4)  &kp LG(N5)  &kp LG(N6)  &kp FSLH     &kp EQUAL
-  &kp LSHFT   &kp PRCNT &kp CARET  &kp LBKT  &kp RBKT  &kp BSLH      &kp UNDER  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)   &kp LSHFT
-                                   &trans    &kp LCTRL &kp SPACE     &trans  &trans  &trans
+  &trans   &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp AMPS      &kp PLUS   &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &trans    &kp BSPC
+  &trans      &kp HASH  &kp DLLR   &kp LBRC  &kp RBRC  &kp PIPE      &kp MINUS  &kp LG(N4)  &kp LG(N5)  &kp LG(N6)  &trans     &kp EQUAL
+  &kp LSHFT   &kp PRCNT &kp CARET  &trans &kp RBKT  &kp BSLH      &trans  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)   &kp LSHFT
+                                   &kp AMPS  &kp UNDER &kp SPACE     &trans  &trans  &trans
             >;
         };
         navigation {
 // -----------------------------------------------------------------------------------------
-// |  TAB |     |     |     |     |     |   |     |     |  UP  |     |     | BSPC  |
-// |      |     |     |PREV |PLAY |NEXT |   |     | LFT | DOWN | RGT |     |       |
-// | SHIFT|     |     |     |     |     |   |     |     |      |     |     | SHFT  |
-//                          |LGUI |CMD+SPC|  | ENT | ESC | ALT  |
+// |  TAB |     |PREV |PLAY |NEXT | VOL_UP  |   |     |     |  UP  |     |     | BSPC  |
+// |      |     |     |     |     | VOL_DOWN|   |     | LFT | DOWN | RGT |     |       |
+// | SHIFT|     |     |     |     | MUTE    |   |     |     |      |     |     | SHFT  |
+//                          | GUI | CMD+SPC |   | ENT | ESC | ALT  |
             bindings = <
-  &kp TAB   &trans &trans &trans &trans &trans   &trans &trans    &kp UP    &trans     &trans &kp BSPC
-  &trans    &trans &kp C_PREV &kp C_PLAY_PAUSE &kp C_NEXT &trans   &trans &kp LEFT  &kp DOWN  &kp RIGHT  &trans &trans
-  &kp LSHFT &trans &trans &trans &trans &trans   &trans &trans    &trans    &trans     &trans &kp LSHFT
-                         &trans &kp LGUI &kp LG(SPACE)   &kp RET &kp ESC  &kp LALT
+  &kp TAB   &trans &kp C_PREV &kp C_PLAY_PAUSE &kp C_NEXT     &kp VOL_UP   &trans &trans    &kp UP    &trans     &trans &kp BSPC
+  &trans    &trans &kp C_PREV &kp C_PLAY_PAUSE &kp C_NEXT &kp VOL_DOWN   &trans &kp LEFT  &kp DOWN  &kp RIGHT  &trans &trans
+  &kp LSHFT &trans &trans &trans &kp C_MUTE &trans   &trans &trans    &trans    &trans     &trans &kp LSHFT
+                         &trans &kp LGUI &kp LG(SPACE)   &kp RET &trans  &kp LALT
             >;
         };
     };
