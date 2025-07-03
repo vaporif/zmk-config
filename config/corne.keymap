@@ -62,7 +62,7 @@
             bindings = <
   &trans   &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp GRAVE   &kp PLUS   &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &trans    &kp BSPC
   &trans      &kp HASH  &kp DLLR   &kp LBRC  &kp RBRC  &kp PIPE      &kp MINUS  &kp LG(N4)  &kp LG(N5)  &kp LG(N6)  &trans     &kp EQUAL
-  &kp LSHFT   &kp PRCNT &kp CARET  &trans &trans  &kp RBKT      &trans  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)   &kp LSHFT
+  &kp LSHFT   &kp PRCNT &kp CARET  &trans &trans  &kp LBKT      &trans  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)   &kp LSHFT
                                    &kp AMPS  &kp UNDER &kp SPACE     &trans  &trans  &trans
             >;
         };
