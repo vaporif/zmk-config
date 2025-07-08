@@ -27,12 +27,12 @@
 // -----------------------------------------------------------------------------------------
 // | ESC  |  !  |  @  |  (  |  )  |  `  |   |  +  |  1  |  2  |  3  |  *  | LALT |
 // |      |  #  |  $  |  {  |  }  |  |  |   |  -  |  4  |  5  |  6  |  0  |  =    |
-// | SHFT |     |  ^  |     |  %  |  [  |   |  ]  |  7  |  8  |  9  |     | SHFT  |
+// | SHFT |  %  |  ^  |  [  |  ]  |     |   |     |  7  |  8  |  9  |     | SHFT  |
 //                                | SPC |         | BSPC| ESC | DEL |
             bindings = <
   &kp ESC   &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp LA(GRAVE)       &kp PLUS   &kp N1   &kp N2    &kp N3    &kp ASTRK  &kp LALT
   &trans    &kp HASH  &kp DLLR   &kp LBRC  &kp RBRC  &kp PIPE      &kp MINUS  &kp N4   &kp N5    &kp N6    &kp N0   &kp EQUAL
-  &kp LSHFT    &trans &kp CARET  &trans &kp PRCNT  &kp LBKT   &kp RBKT  &kp N7   &kp N8    &kp N9    &trans     &kp LSHFT
+  &kp LSHFT    &trans &kp CARET  &kp LBKT &kp RBKT  &trans   &trans  &kp N7   &kp N8    &kp N9    &trans     &kp LSHFT
                            &trans &trans  &kp SPACE  &kp BSPC  &kp ESC  &kp DEL
             >;
         };
@@ -40,12 +40,12 @@
 // -----------------------------------------------------------------------------------------
 // |      |  !  |  @  |  (  |  )  |  `  |   |  +  | CMD+1 | CMD+2 | CMD+3 |  *  | BSPC  |
 // |      |  #  |  $  |  {  |  }  |  |  |   |  -  | CMD+4 | CMD+5 | CMD+6 |     |  =    |
-// | SHFT |  %  |  ^  |     |     |  [  |   |     | CMD+7 | CMD+8 | CMD+9 |     | SHFT  |
+// | SHFT |  %  |  ^  | [   |  ]  |     |   |     | CMD+7 | CMD+8 | CMD+9 |     | SHFT  |
 //                    |  &  |  _  | SPC |
             bindings = <
   &trans   &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp GRAVE   &kp PLUS   &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &trans    &kp BSPC
   &trans      &kp HASH  &kp DLLR   &kp LBRC  &kp RBRC  &kp PIPE      &kp MINUS  &kp LG(N4)  &kp LG(N5)  &kp LG(N6)  &trans     &kp EQUAL
-  &kp LSHFT   &kp PRCNT &kp CARET  &trans &trans  &kp LBKT      &trans  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)   &kp LSHFT
+  &kp LSHFT   &kp PRCNT &kp CARET  &LBKT &RBKT  &trans      &trans  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)   &kp LSHFT
                                    &kp AMPS  &kp UNDER &kp SPACE     &trans  &trans  &trans
             >;
         };
