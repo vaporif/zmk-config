@@ -27,7 +27,7 @@
 // -----------------------------------------------------------------------------------------
 // | ESC  |  !  |  @  |  (  |  )  |  |  |   |  +  |  1  |  2  |  3  |  *  | LALT |
 // |      |  #  |  $  |  {  |  }  |  G  |   |  -  |  4  |  5  |  6  |  0  |  =    |
-// | SHFT |  %  |  ^  |  [  |  ]  |     |   |  =  |  7  |  8  |  9  |     | SHFT  |
+// | SHFT |  %  |  ^  |  [  |  ]  |  `  |   |  =  |  7  |  8  |  9  |     | SHFT  |
 //                                | SPC |         | BSPC| ESC | DEL |
             bindings = <
   &kp ESC   &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp PIPE       &kp PLUS   &kp N1   &kp N2    &kp N3    &kp ASTRK  &kp LALT
@@ -40,7 +40,7 @@
 // -----------------------------------------------------------------------------------------
 // |      |  !  |  @  |  (  |  )  |  |  |   |  +  | CMD+1 | CMD+2 | CMD+3 |  *  | BSPC  |
 // |      |  #  |  $  |  {  |  }  |  G  |   |  -  | CMD+4 | CMD+5 | CMD+6 |     |  =    |
-// | SHFT |  %  |  ^  |  [  |  ]  |     |   |  =  | CMD+7 | CMD+8 | CMD+9 |     | SHFT  |
+// | SHFT |  %  |  ^  |  [  |  ]  |  `  |   |  =  | CMD+7 | CMD+8 | CMD+9 |     | SHFT  |
 //                    |  &  |  _  | SPC |
             bindings = <
   &trans   &kp EXCL  &kp AT     &kp LPAR  &kp RPAR  &kp PIPE   &kp PLUS   &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &trans    &kp BSPC
