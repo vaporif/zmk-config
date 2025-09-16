@@ -10,7 +10,7 @@
 / {
     wired_split {
         compatible = "zmk,wired-split";
-        device = <&uart0>;
+        device = <&pro_micro_serial>;
     };
 
     keymap {
