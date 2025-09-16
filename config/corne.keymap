@@ -8,6 +8,11 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    wired_split {
+        compatible = "zmk,wired-split";
+        device = <&pro_micro_serial>;
+    };
+
     keymap {
         compatible = "zmk,keymap";
         default_layer {
