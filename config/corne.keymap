@@ -8,10 +8,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    wired_split {
-        compatible = "zmk,wired-split";
-        device = <&uart0>;
-    };
 
     keymap {
         compatible = "zmk,keymap";
